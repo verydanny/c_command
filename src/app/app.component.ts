@@ -70,7 +70,6 @@ export class AppComponent {
     onAdd: ( event ) => {
       let list = this[ event.to.className ];
       let index = event.item.dataset.ngIndex;
-      let item = event.item;
 
       list[ index ].counter += 1;
     }
