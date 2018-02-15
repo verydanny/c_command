@@ -1,0 +1,40 @@
+<div class="client_command">
+  <div class="title">
+    <h2>Client Command</h2>
+  </div>
+  <div class="container">
+    <div class="list">
+      <div class="list_one" [sortablejs]="list_one" [sortablejsOptions]="options">
+        <div *ngFor="let item of list_one; let i = index" class="list-item {{ item.counter >= 5 ? 'ignore' : '' }}" [attr.data-ng-index]="i">
+          <div class="item_image">
+            <img [src]="'src/assets/' + item.img_path">
+          </div>
+          <span class="item_name">{{ item.name }}</span>
+          <span class="item_counter">{{ item.counter }}</span>
+          <div class="list_selector">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="list_two" [sortablejs]="list_two" [sortablejsOptions]="options">
+        <div *ngFor="let item of list_two; let i = index" class="list-item {{ item.counter >= 5 ? 'ignore' : '' }}" [attr.data-ng-index]="i">
+          <div class="item_image">
+            <img [src]="'src/assets/' + item.img_path">
+          </div>
+          <span class="item_name">{{ item.name }}</span>
+          <span class="item_counter">{{ item.counter }}</span>
+          <div class="list_selector">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
