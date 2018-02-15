@@ -63,10 +63,6 @@ export class AppComponent {
     }
   ];
 
-  move_state = {
-    selected: ''
-  };
-
   options: SortablejsOptions = {
     group: 'client_command',
     filter: '.ignore',
@@ -77,8 +73,6 @@ export class AppComponent {
       let item = event.item;
 
       list[ index ].counter += 1;
-
-      console.log( list );
     }
   };
 }
