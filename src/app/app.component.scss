@@ -41,12 +41,22 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     box-sizing: border-box;
+    > div {
+      min-height: 150px;
+    }
     @media (min-width: 768px) {
       width: 50%;
       &:first-of-type {
         margin-right: 10px;
       }
     }
+  }
+
+  .empty {
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #C0B5AC;
+    margin-top: 50px;
   }
 
   .list-item {

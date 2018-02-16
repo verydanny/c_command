@@ -63,6 +63,12 @@ export class AppComponent {
     }
   ];
 
+  renderEmpty( list: Object[] ) {
+    if ( list.length <= 0 ) {
+      return true;
+    }
+  }
+
   options: SortablejsOptions = {
     group: 'client_command',
     filter: '.ignore',

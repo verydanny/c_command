@@ -5,7 +5,8 @@
   <div class="container">
     <div class="list">
       <div class="list_one" [sortablejs]="list_one" [sortablejsOptions]="options">
-        <div *ngFor="let item of list_one; let i = index" class="list-item {{ item.counter >= 5 ? 'ignore' : '' }}" [attr.data-ng-index]="i">
+        <div class="empty" *ngIf="renderEmpty( list_one )">(Drag and drop to add back into list)</div>
+        <div *ngFor="let item of list_one; let i = index; " class="list-item {{ item.counter >= 5 ? 'ignore' : '' }}" [attr.data-ng-index]="i">
           <div class="item_image">
             <img [src]="'src/assets/' + item.img_path">
           </div>
@@ -22,6 +23,7 @@
 
     <div class="list">
       <div class="list_two" [sortablejs]="list_two" [sortablejsOptions]="options">
+        <div class="empty" *ngIf="renderEmpty( list_two )">(Drag and drop to add back into list)</div>
         <div *ngFor="let item of list_two; let i = index" class="list-item {{ item.counter >= 5 ? 'ignore' : '' }}" [attr.data-ng-index]="i">
           <div class="item_image">
             <img [src]="'src/assets/' + item.img_path">
