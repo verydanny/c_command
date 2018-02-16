@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { SortablejsOptions } from 'angular-sortablejs';
 
+export type List = {
+  name: string,
+  img_path: string,
+  counter: number
+};
+
 @Component({
   selector: 'app',
   templateUrl: 'app.component.html',
@@ -71,15 +77,21 @@ export class AppComponent {
     return false;
   }
 
+  onAdd = ( event: any ) => {
+    const moved_to: string = event.to.className;
+    const item_name: string = event.item.dataset.ngName;
+    
+    this[ moved_to ].filter( ( item: List ) => {
+      if ( item.name === item_name ) {
+        item.counter++
+      }
+    });
+  }
+
   options: SortablejsOptions = {
     group: 'client_command',
     filter: '.ignore',
     animation: 150,
-    onAdd: ( event ) => {
-      let list = this[ event.to.className ];
-      let index = event.item.dataset.ngIndex;
-
-      list[ index ].counter += 1;
-    }
+    onAdd: this.onAdd
   };
 }
