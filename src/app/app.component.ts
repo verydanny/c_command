@@ -67,6 +67,8 @@ export class AppComponent {
     if ( list.length <= 0 ) {
       return true;
     }
+
+    return false;
   }
 
   options: SortablejsOptions = {
