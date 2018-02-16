@@ -69,7 +69,7 @@ export class AppComponent {
     }
   ];
 
-  renderEmpty( list: Object[] ) {
+  renderEmpty( list: List[] ) {
     if ( list.length <= 0 ) {
       return true;
     }
