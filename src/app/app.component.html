@@ -4,6 +4,12 @@
   </div>
   <div class="container">
     <div class="list">
+      <ng-container *ngIf="list_one.length <= 0">
+        <h3>(Drag and drop back in)</h3>
+      </ng-container>
+      <ng-container *ngIf="list_one.length > 0">
+        <h3>List One</h3>
+      </ng-container>
       <div class="list_one" [sortablejs]="list_one" [sortablejsOptions]="options">
         <ng-container *ngIf="list_one.length > 0">
           <div *ngFor="let item of list_one" class="list-item {{ item.counter >= 5 ? 'ignore' : '' }}" [attr.data-ng-name]="item.name">
@@ -25,6 +31,9 @@
     <div class="list">
       <ng-container *ngIf="list_two.length <= 0">
         <h3>(Drag and drop back in)</h3>
+      </ng-container>
+      <ng-container *ngIf="list_two.length > 0">
+        <h3>List Two</h3>
       </ng-container>
       <div class="list_two" [sortablejs]="list_two" [sortablejsOptions]="options">
         <ng-container *ngIf="list_two.length > 0">
